@@ -1,0 +1,16 @@
+<div class="signup-container" style="text-align: center; margin-top: 50px;">
+  <h2>Sign Up</h2>
+  <input type="text" placeholder="Name" [(ngModel)]="name" name="name" /><br><br>
+  <input type="email" placeholder="Email" [(ngModel)]="email" name="email" /><br><br>
+  <input type="password" placeholder="Password" [(ngModel)]="password" name="password" /><br><br>
+
+  <select [(ngModel)]="role" name="role">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select><br><br>
+
+  <button  style="color: rgb(82, 161, 4);"  (click)="onSignup()">Sign Up</button>
+
+  <p *ngIf="error" style="color:red">{{ error }}</p>
+  <p>Already have an account? <a [href]="l">Login</a></p>
+</div>

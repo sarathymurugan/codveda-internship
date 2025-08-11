@@ -1,0 +1,40 @@
+<div class="dashboard-container" style="text-align: center; padding: 20px; position: relative;">
+  <div style="display: flex; justify-content: flex-end;">
+<button style="color: crimson;" (click)="logout()">Logout</button>  </div>
+  <h2>Product Dashboard</h2>
+
+  <form (ngSubmit)="saveProduct()">
+    <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required /><br><br>
+    <input type="number" placeholder="Price" [(ngModel)]="price" name="price" required /><br><br>
+    <textarea placeholder="Description" [(ngModel)]="description" name="description"></textarea><br><br>
+
+    <button  style="color: rgb(82, 161, 4);" type="submit">{{ editMode ? 'Update' : 'Add' }} Product</button><br><br>
+    <button   style="color: blue;" *ngIf="editMode" type="button" (click)="editMode=false; editId=null">Cancel</button>
+  </form>
+
+  <p *ngIf="error" style="color:red">{{ error }}</p>
+
+  <table style="text-align: center; margin: 0 auto; width: 80%; table-layout: fixed; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="width: 20%; border-bottom: 1px solid #ccc;">Name</th>
+        <th style="width: 20%; border-bottom: 1px solid #ccc;">Price</th>
+        <th style="width: 40%; border-bottom: 1px solid #ccc;">Description</th>
+        <th style="width: 20%; border-bottom: 1px solid #ccc;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td style="word-break: break-word;">{{ p.name }}</td>
+        <td style="word-break: break-word;">{{ p.price }}</td>
+        <td style="word-break: break-word;">{{ p.description }}</td>
+        <td>
+          <button style="color: blue; margin-right: 10px;" (click)="editProduct(p)">Edit</button>
+          <button style="color: crimson;" (click)="deleteProduct(p._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
