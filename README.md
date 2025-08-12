@@ -95,7 +95,7 @@ DELETE	/api/products/:id	Delete product	✅ Yes
 ```
 
 📸 Screenshots
-!Login
+!Login[]
 
 Dashboard
 
