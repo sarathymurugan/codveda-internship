@@ -40,7 +40,7 @@ The application allows **users/admins** to:
 ---
 
 ## 📂 Project Structure
-
+```
 codveda-internship/
 │── backend/ # Node.js + Express API
 │ ├── routes/ # Auth & product routes
@@ -55,7 +55,7 @@ codveda-internship/
 │── README.md # Project documentation
 │── .env # Environment variables
 
-
+```
 ---
 
 ## ⚙️ Installation & Setup
@@ -82,7 +82,7 @@ ng serve
 
 Frontend runs on http://localhost:4200
 Backend runs on http://localhost:5000
-
+```
 🔑 API Endpoints
 Method	Endpoint	Description	Auth Required
 POST	/api/auth/signup	Register new user	❌ No
@@ -91,7 +91,7 @@ GET	/api/products	Get all products	✅ Yes
 POST	/api/products	Add product	✅ Yes
 PUT	/api/products/:id	Update product	✅ Yes
 DELETE	/api/products/:id	Delete product	✅ Yes
-```
+
 
 📸 Screenshots
 !Login
